@@ -8,12 +8,8 @@ namespace Singleton
         static void Main(string[] args)
         {
             Begin();
-
-            PrintMessage(InitializeStraightAway.Instance);
-
-            PrintMessage(LazilyInitialize.Instance);
-            
-            PrintMessage(LazilyInitializeIdiomatically.Instance);
+            PrintMessages();
+            PrintMessages();
         }
 
         private static void Begin()
@@ -25,7 +21,14 @@ namespace Singleton
             Console.WriteLine($"{LazilyInitializeIdiomatically.Name} ready!");
             Break();
         }
-
+        
+        private static void PrintMessages()
+        {
+            PrintMessage(InitializeStraightAway.Instance);
+            PrintMessage(LazilyInitialize.Instance);
+            PrintMessage(LazilyInitializeIdiomatically.Instance);
+        }
+        
         private static void PrintMessage(Speak speaker)
         {
             speaker.GetMessage();
