@@ -13,15 +13,15 @@ namespace Singleton
         {
             get
             {
-                if (AreYouTheKurgan())
+                if (instance is null && AreYouTheKurgan())
                 {
                     instance = new BombedMazeFactory();
                 }
-                else if (AreYouConnorMacLeod())
+                else if (instance is null && AreYouConnorMacLeod())
                 {
                     instance = new EnchantedMazeFactory();
                 }
-                else
+                else if (instance is null)
                 {
                     instance = new NormalMazeFactory();
                 }
