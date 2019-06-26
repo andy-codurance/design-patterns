@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{3B2E2D44-4EE4-4C5C-80CC-83B7BB30367A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge", "Bridge\Bridge.csproj", "{E513AB21-E5BB-40C1-AD64-D32A1B745E2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{3B2E2D44-4EE4-4C5C-80CC-83B7BB30367A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B2E2D44-4EE4-4C5C-80CC-83B7BB30367A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B2E2D44-4EE4-4C5C-80CC-83B7BB30367A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E513AB21-E5BB-40C1-AD64-D32A1B745E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E513AB21-E5BB-40C1-AD64-D32A1B745E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E513AB21-E5BB-40C1-AD64-D32A1B745E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E513AB21-E5BB-40C1-AD64-D32A1B745E2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
