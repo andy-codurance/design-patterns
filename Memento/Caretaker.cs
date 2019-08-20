@@ -2,25 +2,24 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
 
     class Caretaker
     {
         static void Main(string[] args)
         {
             // Implementation example from GOF book, pg 287
-            var mementoes = new List<Originator.Memento>();
+            var mementoes = new Stack<Originator.Memento>();
             
             var originator = new Originator();
             Console.WriteLine("Initial state:");
             originator.Print();
             
-            mementoes.Add(originator.CreateMemento());
+            mementoes.Push(originator.CreateMemento());
             originator.Update();
             Console.WriteLine($"State @ {DateTime.Now}:");
             originator.Print();
             
-            originator.SetMemento(mementoes.Last());
+            originator.SetMemento(mementoes.Pop());
             Console.WriteLine("Restored initial state:");
             originator.Print();
 
