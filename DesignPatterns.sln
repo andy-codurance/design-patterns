@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 
+#
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "Singleton\Singleton.csproj", "{634E939B-2752-4842-8F8F-3D1D3F4B6CF5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{77AFA577-52A4-40B5-B432-7D6896137FCB}"
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge", "Bridge\Bridge.csproj", "{E513AB21-E5BB-40C1-AD64-D32A1B745E2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memento", "Memento\Memento.csproj", "{518B09AB-8824-4EA1-9D5E-45A7B45FB010}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visitor", "Visitor\Visitor.csproj", "{84014B99-7486-43CC-8015-6C62B12943B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,5 +39,9 @@ Global
 		{518B09AB-8824-4EA1-9D5E-45A7B45FB010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{518B09AB-8824-4EA1-9D5E-45A7B45FB010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{518B09AB-8824-4EA1-9D5E-45A7B45FB010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84014B99-7486-43CC-8015-6C62B12943B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84014B99-7486-43CC-8015-6C62B12943B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84014B99-7486-43CC-8015-6C62B12943B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84014B99-7486-43CC-8015-6C62B12943B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
