@@ -1,14 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Visitor
 {
-    using System.Collections.Generic;
-
     class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            
+            var chasis = new Chassis();
+            chasis.Add(new FloppyDisk());
+            chasis.Add(new Card("Vodoo FX"));
+            chasis.Add(new Bus("AGP"));
+
+            var equipmentVisitor = new PricingVisitor();
+            chasis.Accept(equipmentVisitor);
+            Console.WriteLine($"The system build will cost £{equipmentVisitor.GetTotal()}");
         }
     }
 
@@ -23,7 +31,7 @@ namespace Visitor
 
     public class FloppyDisk : Equipment
     {
-        private string name;
+        private string name = "Floppy";
 
         public override void Accept(EquipmentVisitor visitor)
         {
@@ -46,7 +54,12 @@ namespace Visitor
 
     public class Card : Equipment
     {
-        private string name;
+        private readonly string name;
+
+        public Card(string name)
+        {
+            this.name = name;
+        }
 
         public override void Accept(EquipmentVisitor visitor)
         {
@@ -69,8 +82,8 @@ namespace Visitor
 
     public class Chassis : Equipment
     {
-        private string name;
-        private List<Equipment> parts;
+        private string name = "Chasis";
+        private List<Equipment> parts = new List<Equipment>();
 
         public override void Accept(EquipmentVisitor visitor)
         {
@@ -93,11 +106,21 @@ namespace Visitor
         {
             return 40;
         }
+
+        public void Add(Equipment equipment)
+        {
+            parts.Add(equipment);
+        }
     }                                                               
 
     public class Bus : Equipment
     {
-        private string name;
+        private readonly string name;
+
+        public Bus(string name)
+        {
+            this.name = name;
+        }
 
         public override void Accept(EquipmentVisitor visitor)
         {
