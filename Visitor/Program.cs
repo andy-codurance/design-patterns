@@ -8,17 +8,17 @@ namespace Visitor
         {
             Console.WriteLine("Hello World!");
             
-            var chasis = new Chassis();
-            chasis.Add(new FloppyDisk());
-            chasis.Add(new Card("Vodoo FX"));
-            chasis.Add(new Bus("AGP"));
+            var chassis = new Chassis();
+            chassis.Add(new FloppyDisk());
+            chassis.Add(new Card("Vodoo FX"));
+            chassis.Add(new Bus("AGP"));
 
             var pricingVisitor = new PricingVisitor();
-            chasis.Accept(pricingVisitor);
+            chassis.Accept(pricingVisitor);
             Console.WriteLine($"The system build will cost £{pricingVisitor.GetTotal()}");
             
             var discountedPricingVisitor = new DiscountedPricingVisitor();
-            chasis.Accept(discountedPricingVisitor);
+            chassis.Accept(discountedPricingVisitor);
             Console.WriteLine($"The discounted system build will cost £{discountedPricingVisitor.GetTotal()}");
         }
     }
