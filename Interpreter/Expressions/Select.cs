@@ -6,7 +6,6 @@ namespace Interpreter.Expressions
 {
 	public class Select : IExpression
 	{
-		private readonly string _column;
 		private readonly Func<Row, string> _expression;
 		private readonly From _from;
 
@@ -25,7 +24,6 @@ namespace Interpreter.Expressions
 				_expression = x => x.FirstName + " " + x.Surname;
 			}
 
-			_column = column;
 			_from = from;
 		}
 

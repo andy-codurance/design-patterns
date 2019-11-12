@@ -19,7 +19,7 @@ namespace Interpreter.Expressions
 			context.Table = _table;
 			if (_where == null)
 			{
-				context.WhereFilter = x => x != null;
+				context.WhereFilter = x => true;
 				return context.Search();
 			}
 

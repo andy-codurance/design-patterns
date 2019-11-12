@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 using Interpreter.Database;
 using Interpreter.Expressions;
 
@@ -12,17 +12,22 @@ namespace Interpreter
 			IExpression query = new Select("FirstName", new From("people"));
 			var context = new Context();
 			var result = query.Interpret(context);
-			Console.WriteLine(string.Join(", ", result));
+			PrettyPrintList(result);
 
 			IExpression queryTwo = new Select("*", new From("people"));
 			context = new Context();
 			result = queryTwo.Interpret(context);
-			Console.WriteLine(string.Join(", ", result));
+			PrettyPrintList(result);
 
-			IExpression queryThree = new Select("Surname", new From("people", new Where(x => x.StartsWith("C"))));
+			IExpression queryThree = new Select("Surname", new From("people", new Where("StartsWith", "C")));
 			context = new Context();
 			result = queryThree.Interpret(context);
-			Console.WriteLine(string.Join(", ", result));
+			PrettyPrintList(result);
+		}
+
+		private static void PrettyPrintList(IEnumerable<string> list)
+		{
+			Console.WriteLine(string.Join(", ", list));
 		}
 	}
 }

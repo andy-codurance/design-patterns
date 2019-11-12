@@ -6,16 +6,19 @@ namespace Interpreter.Expressions
 {
 	public class Where : IExpression
 	{
-		private readonly Func<string, bool> _filter;
+		private readonly Func<string, bool> _expression;
 
-		public Where(Func<string, bool> filter)
+		public Where(string filter, string parameter)
 		{
-			_filter = filter;
+			if (filter == "StartsWith")
+			{
+				_expression = x => x.StartsWith(parameter);
+			}
 		}
 
 		public List<string> Interpret(Context context)
 		{
-			context.WhereFilter = _filter;
+			context.WhereFilter = _expression;
 			return context.Search();
 		}
 	}
